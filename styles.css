@@ -142,3 +142,20 @@ footer { padding: 50px 0; text-align: center; background: #1c1c1c; color: #fff; 
 .lived-lens .measurement-line {
     margin: 20px 0;
 }
+/* ========================
+   CLOSING MOMENT
+======================== */
+
+.closing-moment {
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.closing-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
