@@ -39,6 +39,9 @@
         <h2>Building My Practice as an Adult Educator</h2>
         <p>A reflective journey through the MAdEd. program at St. Francis Xavier University.</p>
     </div>
+<button onclick="readArtifact(this)" class="phase-tag" style="cursor:pointer; background: var(--blueprint-line);">
+    🔊 Read Aloud
+</button>    
 </section>
 
 <div class="container">
@@ -73,6 +76,17 @@
 
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
+    function readArtifact(button) {
+    // This finds the parent "building-block" and gets all its text
+    const text = button.parentElement.innerText.replace("Read Aloud", "");
+    const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Optional: Match the "professional educator" tone
+    utterance.rate = 0.9; // Slightly slower for clarity
+    utterance.pitch = 1;
+
+    window.speechSynthesis.speak(utterance);
+}
 </script>
 </body>
 </html>
