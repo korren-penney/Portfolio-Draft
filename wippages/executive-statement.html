@@ -35,7 +35,8 @@
         </div>
     </div>
 </header>
-
+<!-- start read alound from here -->
+<div class="read-aloud"> 
 <section class="hero">
     <div class="container">
         <h2>Executive Statement</h2>
@@ -111,7 +112,17 @@
 
     </div>
 </div>
-
+</div>
+<!-- end read aloud from here -->
+<div class="audio-guide-controls">
+    <span class="phase-tag" style="margin-bottom: 0;">Audio Tour Guide</span>
+    <div class="button-group">
+        <button onclick="playReadAloud()">▶ Play</button>
+        <button onclick="pauseReadAloud()">⏸ Pause</button>
+        <button onclick="stopReadAloud()">⏹ Stop</button>
+        <!-- <button onclick="stopReadAloud()" style="background: var(--blueprint-line);">⏭ Skip</button> -->
+    </div>
+</div>
 <footer>
     <p>&copy; <span id="year"></span> Korren Penney's Portfolio</p>
 </footer>
