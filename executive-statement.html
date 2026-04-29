@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Executive Statement | Korren Penney</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="playReadAloud.js"></script>    
 </head>
 <body>
 
@@ -35,7 +36,8 @@
         </div>
     </div>
 </header>
-
+<!-- start read alound from here -->
+<div class="read-aloud"> 
 <section class="hero">
     <div class="container">
         <h2>Executive Statement</h2>
@@ -55,29 +57,40 @@
                 <h2>Professional Vision</h2>
 
                 <p class="drop-cap">
-                    I am an adult educator who supports learners in navigating transitions through accessible, practical technology education. My work is grounded in helping individuals build the skills and confidence they need to move forward in their personal and professional lives.
+                    I am an adult educator who supports learners in navigating transitions through accessible, practical technology education. 
+                    My work is grounded in helping individuals build the skills and confidence they need to move forward in their personal and 
+                    professional lives.
                 </p>
 
                 <p>
-                    Drawing on my experience in training, program delivery, and learner support, I focus on creating learning environments that are relevant, applied, and responsive to the realities adult learners face. I approach my work with the understanding that learners bring prior experiences, responsibilities, and challenges, and that effective education must meet them where they are.
+                    Drawing on my experience in training, program delivery, and learner support, I focus on creating learning environments that 
+                    are relevant, applied, and responsive to the realities adult learners face. I approach my work with the understanding that 
+                    learners bring prior experiences, responsibilities, and challenges, and that effective education must meet them where they are.
                 </p>
 
                 <div class="measurement-line">Approach to Practice</div>
 
                 <p>
-                    My approach emphasizes clarity, real-world application, and the development of skills that can be used beyond the learning environment. In my practice, technology is not the focus but a tool that supports access, confidence, and opportunity. I am particularly attentive to how learning environments influence a learner’s sense of belonging, recognizing that inclusion is not assumed but intentionally designed.
+                    My approach emphasizes clarity, real-world application, and the development of skills that can be used beyond the learning 
+                    environment. In my practice, technology is not the focus but a tool that supports access, confidence, and opportunity. I am 
+                    particularly attentive to how learning environments influence a learner’s sense of belonging, recognizing that inclusion is 
+                    not assumed but intentionally designed.
                 </p>
 
                 <div class="measurement-line">Why This Work Matters</div>
 
                 <p>
-                    I have seen how curriculum and instructional choices can either support or hinder learner engagement. This has shaped my commitment to creating learning spaces where individuals feel capable, supported, and able to move forward with confidence. My work is guided by the belief that education should not only build skills, but also reduce barriers and expand opportunities.
+                    I have seen how curriculum and instructional choices can either support or hinder learner engagement. This has shaped my 
+                    commitment to creating learning spaces where individuals feel capable, supported, and able to move forward with confidence. 
+                    My work is guided by the belief that education should not only build skills, but also reduce barriers and expand opportunities.
                 </p>
 
                 <div class="measurement-line">Portfolio Structure</div>
 
                 <p>
-                    This portfolio reflects the ongoing development of my practice. Using a house-building metaphor, it is organized to represent the different elements that support my work as an educator. From the foundation of my beliefs to the frameworks that guide my approach and the evidence of my practice in action, each section contributes to a structure that continues to evolve.
+                    This portfolio reflects the ongoing development of my practice. Using a house-building metaphor, it is organized to represent 
+                    the different elements that support my work as an educator. From the foundation of my beliefs to the frameworks that guide my 
+                    approach and the evidence of my practice in action, each section contributes to a structure that continues to evolve.
                 </p>
 
             </article>
@@ -90,19 +103,24 @@
                 <h3>Positionality & Lens</h3>
 
                 <p>
-                    My work is shaped by both my professional experience and my personal journey. With a background in technology-based learning environments, I bring a strong focus on inclusive curriculum design and on understanding how learning environments influence a sense of belonging.
+                    My work is shaped by both my professional experience and my personal journey. With a background in technology-based learning 
+                    environments, I bring a strong focus on inclusive curriculum design and on understanding how learning environments influence 
+                    a sense of belonging.
                 </p>
 
                 <div class="measurement-line"></div>
 
                 <p>
-                    My lived experience with PTSD and anxiety has increased my awareness of the importance of safety, predictability, and trust in educational settings. This perspective informs how I design and facilitate learning, with a focus on creating structured and supportive environments that respond to diverse learner needs.
+                    My lived experience with PTSD and anxiety has increased my awareness of the importance of safety, predictability, and trust in 
+                    educational settings. This perspective informs how I design and facilitate learning, with a focus on creating structured and 
+                    supportive environments that respond to diverse learner needs.
                 </p>
 
                 <div class="measurement-line"></div>
 
                 <p>
-                    I approach my work with an awareness that my perspectives shape how I interpret and respond to learners. Because of this, I engage in ongoing reflection, attend to power dynamics, and prioritize learner voice in both teaching and evaluation.
+                    I approach my work with an awareness that my perspectives shape how I interpret and respond to learners. Because of this, I engage 
+                    in ongoing reflection, attend to power dynamics, and prioritize learner voice in both teaching and evaluation.
                 </p>
 
             </div>
@@ -111,7 +129,17 @@
 
     </div>
 </div>
-
+</div>
+<!-- end read aloud from here -->
+<div class="audio-guide-controls">
+    <span class="phase-tag" style="margin-bottom: 0;">Audio Tour Guide</span>
+    <div class="button-group">
+        <button onclick="playReadAloud()">▶ Play</button>
+        <button onclick="pauseReadAloud()">⏸ Pause</button>
+        <button onclick="stopReadAloud()">⏹ Stop</button>
+        <!-- <button onclick="stopReadAloud()" style="background: var(--blueprint-line);">⏭ Skip</button> -->
+    </div>
+</div>
 <footer>
     <p>&copy; <span id="year"></span> Korren Penney's Portfolio</p>
 </footer>

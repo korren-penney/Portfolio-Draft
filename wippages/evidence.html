@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evidence | Korren Penney</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="playReadAloud.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,8 @@
             </div>
         </div>
     </header>
-
+<!-- start read alound from here -->
+<div class="read-aloud"> 
     <section class="hero">
         <div class="container">
             <h2>Evidence of Practice</h2>
@@ -136,7 +138,17 @@
             </div>
         </div>
     </div>
-
+</div>
+<!-- end read aloud from here -->
+<div class="audio-guide-controls">
+    <span class="phase-tag" style="margin-bottom: 0;">Audio Tour Guide</span>
+    <div class="button-group">
+        <button onclick="playReadAloud()">▶ Play</button>
+        <button onclick="pauseReadAloud()">⏸ Pause</button>
+        <button onclick="stopReadAloud()">⏹ Stop</button>
+        <!-- <button onclick="stopReadAloud()" style="background: var(--blueprint-line);">⏭ Skip</button> -->
+    </div>
+</div>
     <footer>
         <p>&copy; <span id="year"></span> Korren Penney's Portfolio</p>
     </footer>
