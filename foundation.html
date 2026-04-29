@@ -7,6 +7,7 @@
     <title>Foundation | Korren Penney Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="foundation.css">
+    <script src="playReadAloud.js"></script>
 </head>
 
 <body>
@@ -36,7 +37,8 @@
             </div>
         </div>
     </header>
-
+<!-- start read alound from here -->
+<div class="read-aloud"> 
     <section class="hero">
         <div class="container">
             <h2>The Foundation</h2>
@@ -285,6 +287,16 @@
     </aside>
         </div>
     </div>
+</div>
+<div class="audio-guide-controls">
+    <span class="phase-tag" style="margin-bottom: 0;">Audio Tour Guide</span>
+    <div class="button-group">
+        <button onclick="playReadAloud()">▶ Play</button>
+        <button onclick="pauseReadAloud()">⏸ Pause</button>
+        <button onclick="stopReadAloud()">⏹ Stop</button>
+        <!-- <button onclick="stopReadAloud()" style="background: var(--blueprint-line);">⏭ Skip</button> -->
+    </div>
+</div>    
 </body>
 <footer>
     <p>&copy; <span id="year"></span> Korren Penney's Portfolio</p>

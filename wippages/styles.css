@@ -1,0 +1,325 @@
+/* ============================================================
+   FINAL MERGED STYLES (WIP + Blueprint System)
+   Korren Penney Portfolio
+============================================================ */
+
+/* ========================
+   VARIABLES
+======================== */
+:root {
+    --primary-blue: #5e3bee;
+    --blueprint-line: rgba(94, 59, 238, 0.25);
+    --text-dark: #1f2933;
+    --text-muted: #2c2c2c;
+    --bg-light: #f5f7f9;
+    --white: #ffffff;
+    --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================
+   RESET & BASE
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ========================
+   HEADER
+======================== */
+header {
+    background-color: #1f2933;
+    color: #ffffff;
+    padding: 20px 0 10px;
+    border-bottom: 4px solid #3a4a5a;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    opacity: 0.7;
+}
+
+/* ========================
+   PROGRESS BAR
+======================== */
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+
+.progress-bar li {
+    margin-right: 15px;
+    opacity: 0.5;
+}
+
+.progress-bar li.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.progress-bar li::after {
+    content: "→";
+    margin-left: 8px;
+}
+
+.progress-bar li:last-child::after {
+    content: "";
+}
+
+/* ========================
+   HERO (with blueprint grid)
+======================== */
+.hero {
+    position: relative;
+    padding: 40px 0;
+    background: linear-gradient(to right, #e8edf2, #f5f7f9);
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* blueprint grid overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero text */
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.hero p {
+    font-size: 1.1rem;
+}
+/* ========================
+   PROFILE IMAGE (FIXED + CLEAN)
+======================== */
+
+/* container stays aligned right */
+.hero-image {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    margin-top: 5px;  
+}
+
+/* actual image */
+.hero-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #1f2933;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* ========================
+   LAYOUT
+======================== */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin: 50px 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.main-content p {
+    margin-bottom: 18px;
+}
+
+/* ========================
+   STATEMENT CARD (Blueprint feel)
+======================== */
+.statement-card {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+/* subtle grid inside card */
+.statement-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+}
+
+.statement-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* corner accents */
+.statement-card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 2px solid #1f2933;
+    border-right: 2px solid #1f2933;
+    opacity: 0.6;
+}
+
+/* ========================
+   MEASUREMENT LINE
+======================== */
+.measurement-line {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 25px 0 10px;
+    color: #666;
+}
+
+.measurement-line::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: 6px;
+    background: repeating-linear-gradient(
+        to right,
+        #aaa,
+        #aaa 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+/* ========================
+   DROP CAP
+======================== */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 2.8rem;
+    margin-right: 8px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* ========================
+   SIDEBAR
+======================== */
+.sidebar {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 5px solid #1f2933;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+}
+
+/* positionality box */
+.positionality-box {
+    border: 1px dashed #bbb;
+    padding: 20px;
+    position: relative;
+}
+
+.positionality-box::before {
+    content: "ANNOTATION";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: var(--bg-light);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+    background-color: #1f2933;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+}
