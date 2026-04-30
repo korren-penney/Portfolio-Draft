@@ -159,40 +159,207 @@ footer { padding: 50px 0; text-align: center; background: #1c1c1c; color: #fff; 
     margin-top: 10px;
     letter-spacing: 0.5px;
 }
-/* --- Audio Tour Controls --- */
+/* ============================================================
+   AUDIO TOUR CONTROLS (RESPONSIVE + TOGGLE + BLUEPRINT STYLE)
+   ============================================================ */
+
 .audio-guide-controls {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: var(--white);
-    padding: 15px;
     border: 1px solid var(--blueprint-line);
-    border-radius: 4px;
+    border-radius: 6px;
     box-shadow: 6px 6px 0px var(--blueprint-line);
     z-index: 1000;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    width: 240px;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
 }
 
-.audio-guide-controls .button-group {
+/* --- HEADER --- */
+.audio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px dashed var(--blueprint-line);
+    background: linear-gradient(to right, #f0f4f8, #fff);
+}
+
+/* Toggle button */
+.toggle-btn {
+    background: none;
+    border: 1px solid var(--blueprint-line);
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 3px;
+}
+
+/* --- BODY --- */
+.audio-body {
+    padding: 12px;
+}
+
+/* Buttons */
+.button-group {
     display: flex;
     gap: 8px;
 }
 
-.audio-guide-controls button {
+.button-group button {
+    flex: 1;
     background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 4px;
     transition: 0.2s;
 }
 
-.audio-guide-controls button:hover {
+.button-group button:hover {
     background: var(--text-dark);
+}
+
+/* --- COLLAPSED STATE --- */
+.audio-guide-controls.collapsed {
+    width: auto;
+}
+
+.audio-guide-controls.collapsed .audio-body {
+    display: none;
+}
+
+/* ============================================================
+   MOBILE VERSION
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .audio-guide-controls {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        width: auto;
+        box-shadow: none;
+    }
+
+    .audio-header {
+        padding: 10px;
+    }
+
+    .button-group {
+        gap: 6px;
+    }
+
+    .button-group button {
+        font-size: 0.8rem;
+        padding: 12px;
+    }
+}
+/* ============================================================
+   RESPONSIVE NAV (HAMBURGER)
+   ============================================================ */
+
+/* Container alignment */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Default nav (desktop) */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ============================================================
+   MOBILE NAV – LEFT ALIGNED + BLUEPRINT STYLE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+    }
+
+    /* Show hamburger */
+    .nav-toggle {
+        display: block;
+        border: 1px dashed var(--blueprint-line);
+        padding: 4px 10px;
+        border-radius: 4px;
+        background: var(--white);
+    }
+
+    /* NAV PANEL */
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 20px;   /* ← KEY CHANGE (was right) */
+
+        width: 240px;
+
+        background: var(--white);
+
+        /* Blueprint grid background */
+        background-image:
+            linear-gradient(rgba(165,180,252,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(165,180,252,0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+
+        border: 1px solid var(--blueprint-line);
+        border-radius: 6px;
+
+        box-shadow: 6px 6px 0px var(--blueprint-line);
+
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+
+        display: none;
+        z-index: 999;
+    }
+
+    /* OPEN STATE */
+    nav.open {
+        display: flex;
+    }
+
+    /* NAV LINKS */
+    nav a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        text-decoration: none;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed var(--blueprint-line);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    nav a:hover {
+        color: var(--primary-blue);
+    }
 }
